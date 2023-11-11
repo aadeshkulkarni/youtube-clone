@@ -1,47 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toggleMenu, toggleSearch } from "../utils/slice/appSlice";
-import { YOUTUBE_SEARCH_API, YOUTUBE_SEARCH_BY_KEYWORD_API } from "../utils/constants";
-import { cacheResults } from "../utils/slice/searchSlice";
-import { setVideos } from "../utils/slice/videoSlice";
+import useYoutubeSearch from "../hooks/useYoutubeSearch";
 
 const Header = () => {
-  const [suggestions, setSuggestions] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-  const [search, setSearch] = useState("");
-  const cache = useSelector((store) => store.search);
+  const youtubeSearch = useYoutubeSearch()
+  const { search, suggestions, showSuggestions,setSearch, getSearchData, setShowSuggestions } = youtubeSearch
   const dispatch = useDispatch();
   const toggleMenuHandler = () => {
     dispatch(toggleMenu());
   };
-
-  const getSearchRecommendations = async () => {
-    if (cache[search]) {
-      setSuggestions(cache[search]);
-    } else {
-      const data = await fetch(YOUTUBE_SEARCH_API + search);
-      const response = await data.json();
-      setSuggestions(response[1]);
-      if (search !== "") {
-        dispatch(cacheResults({ [search]: response[1] }));
-      }
-    }
-  };
-
-  const getSearchData = async (query) => {
-    if (search !== "") {
-      const data = await fetch(YOUTUBE_SEARCH_BY_KEYWORD_API.replace("[QUERY]", query));
-      const response = await data.json();
-      dispatch(setVideos(response?.items));
-    }
-  };
-
-  useEffect(() => {
-    const timer = setTimeout(() => getSearchRecommendations(), 500);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [search]);
 
   const onClickHandler = (suggestion) => {
     getSearchData(suggestion);
