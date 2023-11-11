@@ -1,12 +1,12 @@
 ## Features
 
 - Video listing page
-    - Search by keyword
-        - Debouncing on search requests
-    - Search by audio
-    - Dynamic scrolling
-    - Filter by tags
-    - Filter by 
+    - [x] Search by keyword
+        - [x] Debouncing on search requests
+    - [ ] Search by audio
+    - [ ] Dynamic scrolling
+    - [x] Filter by tags
+    - [ ] Filter by 
         - Trending
         - Shopping
         - Music
@@ -18,17 +18,21 @@
         - Learning
         - Fashion & Beauty
         - Podcasts
-- Video detail page
-    - Video container
-        - Video
-        - Video Info
-    - Live stream (disabled for now)
-        - Optimised & scalable for huge traffic
-    - Multi-level comments
-- Collapsible Sidebar
+- [x] Video detail page
+    - [x] Video container
+        - [x] Video
+        - [ ] Video Info
+    - [ ] Live stream (disabled for now)
+        - [x] Optimised & scalable for huge traffic
+    - [x] Comments
+        - [x] Show comments
+        - [ ]Add comments
+    - [x] Video recommendation
+- [x] Collapsible Sidebar
 
 
-Non-functional features:
+
+## Non-functional features
 
 - Desktop-first
 - Responsive
@@ -38,7 +42,7 @@ Non-functional features:
 - Localisation support  
 - Performance
 
-Tech choices:
+## Tech choices:
 
 - ReactJS
 - Redux
