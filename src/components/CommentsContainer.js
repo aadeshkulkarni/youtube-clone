@@ -22,7 +22,7 @@ const CommentsList = ({ list, isComment }) => {
     list.map((comment) => {
       // comment.replies && console.log("Comment: ",comment?.replies?.comments?.length)
       return (
-        <div key={comment?.id}>
+        <div className="hidden md:block" key={comment?.id}>
           <Comment data={isComment ? comment?.snippet : comment?.snippet?.topLevelComment?.snippet} />
           {comment?.replies?.comments?.length > 0 && (
             <div className="pl-16">
@@ -48,8 +48,8 @@ const CommentsContainer = ({ videoID }) => {
     dispatch(setComments(response));
   }
   return (
-    <div className="p-2 m-2">
-      <h1 className="font-bold text-2xl">Comments</h1>
+    <div className="p-2 md:m-2">
+      <h1 className="font-bold text-lg md:text-2xl">Comments</h1>
       <CommentsList list={commentsList?.items} />
     </div>
   );

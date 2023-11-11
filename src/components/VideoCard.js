@@ -9,9 +9,9 @@ const VideoCard = ({ info }) => {
   console.log()
 
   return (
-    <div className="p-2 m-2 w-[340px] max-w-[340px]">
+    <div className="py-2 my-2 md:p-2 md:m-2 w-full md:w-[340px] md:max-w-[340px]">
       <Link className="cursor-pointer" to={`/watch?v=${videoId}`}>
-        <img className="rounded-lg max-w-[340px] aspect-video" src={thumbnails?.medium?.url ? thumbnails?.medium?.url : thumbnails?.default?.url} alt="thumbnail" />
+        <img className="md:rounded-lg w-full md:max-w-[340px] aspect-video" src={thumbnails?.medium?.url ? thumbnails?.medium?.url : thumbnails?.default?.url} alt="thumbnail" />
       </Link>
       <ul>
         <li className="overflow-hidden text-ellipsis line-clamp-2 font-bold text-md m-2">{title}</li>
