@@ -29,8 +29,8 @@ const Header = () => {
           <img className="rounded-full p-2" src="./search.svg" alt="search"/>
         </div>
         <div className="hidden md:flex justify-center items-center">
-          <div className="relative">
-            <div className="flex justify-center items-center">
+          <div className="">
+            <div className="flex justify-center items-center relative">
               <input
                 onChange={(e) => setSearch(e.target.value)}
                 onFocus={() => setShowSuggestions(true)}
