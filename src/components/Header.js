@@ -50,7 +50,7 @@ const Header = () => {
             {showSuggestions && suggestions.length > 0 && (
               <>
                 <div className="fixed top-0 left-0 z-10 w-screen h-screen" onClick={() => setShowSuggestions(false)}></div>
-                <div className="fixed bg-white py-2 px-4 border border-gray-300 rounded-lg w-[600px] z-50">
+                <div className="fixed bg-white py-2 px-4 border border-gray-300 rounded-lg w-[600px] z-60">
                   <ul className="">
                     {suggestions.map((suggestion) => (
                       <li key={suggestion} onClick={() => onClickHandler(suggestion)} className="hover:bg-gray-100 py-1 border-b border-gray-50 cursor-pointer flex">

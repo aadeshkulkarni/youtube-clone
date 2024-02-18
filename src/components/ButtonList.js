@@ -37,7 +37,7 @@ const ButtonList = () => {
     }
   };
   return (
-    <div className="h-[60px] w-screen overflow-x-scroll px-12 py-2 relative flex">
+    <div className="h-[60px] w-screen overflow-x-scroll px-12 py-2 relative flex -z-10">
       {btnList.length > 15 && btnState.offset < btnList.length && (
         <div
           onClick={() => {
@@ -67,7 +67,7 @@ const ButtonList = () => {
           ⃪{" "}
         </div>
       )}
-      <div onClick={() => dispatch(toggleMenu())} className="absolute left-2 z-10 cursor-pointer md:hidden p-1 bg-gray-200">
+      <div onClick={() => dispatch(toggleMenu())} className="absolute -z-10 left-2 cursor-pointer md:hidden p-1 bg-gray-200">
         <img src="./menu-navi.svg" className="w-8" alt="svg" />
       </div>
       {btnList
