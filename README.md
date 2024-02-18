@@ -1,51 +1,25 @@
-## Features
+### Youtube spinoff
 
-- Video listing page
-    - [x] Search by keyword
-        - [x] Debouncing on search requests
-    - [ ] Search by audio
-    - [ ] Dynamic scrolling
-    - [x] Filter by tags
-    - [ ] Filter by 
-        - Trending
-        - Shopping
-        - Music
-        - Movies
-        - Live
-        - Gaming
-        - News
-        - Sports
-        - Learning
-        - Fashion & Beauty
-        - Podcasts
-- [x] Video detail page
-    - [x] Video container
-        - [x] Video
-        - [ ] Video Info
-    - [ ] Live stream (disabled for now)
-        - [x] Optimised & scalable for huge traffic
-    - [x] Comments
-        - [x] Show comments
-        - [ ]Add comments
-    - [x] Video recommendation
-- [x] Collapsible Sidebar
+App link: [Youtubespinoff](https://youtubespinoff.netlify.app)
 
 
+### How to setup
 
-## Non-functional features
+1. Clone the repository
+2. `cd youtube-clone`
+3. `npm install`
+4. `npm run start`
+   
+### Tech stack
 
-- Desktop-first
-- Responsive
-- Authentication
-- Offline support
-- Unit & Integration testing
-- Localisation support  
-- Performance
+1. ReactJS
+2. TailwindCSS
+3. Redux
+4. React-router
 
-## Tech choices:
 
-- ReactJS
-- Redux
-- TailwindCSS
-- React-router-dom
-- Jest & React testing library
+### Modules
+
+1. Video Listing
+2. Video Detail
+3. Debounced search
