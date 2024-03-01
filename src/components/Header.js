@@ -11,6 +11,7 @@ const Header = () => {
   };
 
   const onClickHandler = (suggestion) => {
+    console.log("Clicked")
     getSearchData(suggestion);
     setSearch(suggestion);
     setShowSuggestions(false);
@@ -49,8 +50,7 @@ const Header = () => {
             </div>
             {showSuggestions && suggestions.length > 0 && (
               <>
-                <div className="fixed top-0 left-0 z-10 w-screen h-screen" onClick={() => setShowSuggestions(false)}></div>
-                <div className="fixed bg-white py-2 px-4 border border-gray-300 rounded-lg w-[600px] z-60">
+                <div className="fixed bg-white py-2 px-4 border border-gray-300 rounded-lg w-[600px] z-[9999]">
                   <ul className="">
                     {suggestions.map((suggestion) => (
                       <li key={suggestion} onClick={() => onClickHandler(suggestion)} className="hover:bg-gray-100 py-1 border-b border-gray-50 cursor-pointer flex">
@@ -60,6 +60,7 @@ const Header = () => {
                     ))}
                   </ul>
                 </div>
+                <div className="fixed top-0 left-0 z-10 w-screen h-screen cursor-pointer" onClick={() => setShowSuggestions(false)}></div>
               </>
             )}
           </div>
