@@ -7,7 +7,7 @@ import { MainContainerShimmer } from "./Shimmer";
 
 const VideoContainer = ({ isRecommendation }) => {
   const dispatch = useDispatch();
-  const videos = useSelector((store) => store.video.videos);
+  const videos = useSelector((store) => store?.video?.videos) || [];
   useEffect(() => {
     getVideos();
   }, []);
